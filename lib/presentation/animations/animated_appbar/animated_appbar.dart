@@ -5,8 +5,6 @@ class AnimatedAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BottomRe,
-    );
+    return const Placeholder();
   }
 }
