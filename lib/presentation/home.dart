@@ -14,7 +14,13 @@ class Home extends StatelessWidget {
                 Navigator.pushNamed(context, "/animations");
               },
               child: Text("Animaciones")
-          )
+          ),
+          ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, "/small_apps");
+              },
+              child: Text("Small Apps")
+          ),
         ],
       ),
     );
