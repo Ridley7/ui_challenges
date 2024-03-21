@@ -11,7 +11,7 @@ class Animations extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: (){
-                Navigator.pushNamed(context, "'/animations/animated_appbar'");
+                Navigator.pushNamed(context, "/animations/animated_appbar");
               },
               child: Text("Animated Appbar")
           ),
