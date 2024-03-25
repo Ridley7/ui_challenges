@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/presentation/animations/animated_list_one/animated_list_one.dart';
 import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/clone_whats_app.dart';
+import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/configuration/app_theme.dart';
 import 'package:flutter_ui_challenges/presentation/small_apps/small_apps.dart';
 
 import 'presentation/animations/animated_appbar/animated_appbar.dart';
@@ -20,10 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme(selectedColor: 1).theme(),
         initialRoute: '/',
         routes: {
           '/': (context) => const Home(),
