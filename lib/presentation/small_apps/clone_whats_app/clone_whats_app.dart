@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/domain/entities/message.dart';
+import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/presentation/providers/chat_provider.dart';
 import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/widgets/message_input_box.dart';
 import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/widgets/my_message_bubble.dart';
 import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/widgets/their_message_bubble.dart';
+import 'package:provider/provider.dart';
 
 class CloneWhatsApp extends StatelessWidget {
   const CloneWhatsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final chatProvider = context.watch<ChatProvider>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Mi amor ♥️"),
@@ -28,22 +34,30 @@ class CloneWhatsApp extends StatelessWidget {
             children: [
               Expanded(
                   child: ListView.builder(
-                      itemCount: 100,
+                    controller: chatProvider.chatScrollController,
+                      itemCount: chatProvider.getMessageList().length,
                       itemBuilder: (context, index) {
-                        return (index % 2 == 0)
-                            ? const TheirMessageBubble()
-                            : const MyMessageBubble();
+                        Message message = chatProvider.getMessageList()[index];
+
+                        if(message.fromWho == FromWho.me){
+                          return MyMessageBubble(message: message);
+                        }else{
+                          return TheirMessageBubble(message: message,);
+                        }
                       }
                   )
               ),
 
-              const MessageInputBox()
+              MessageInputBox(
+                  onValue: chatProvider.sendMessage
+              )
             ],
           ),
         ),
       ),
     );
   }
+
 }
 
 

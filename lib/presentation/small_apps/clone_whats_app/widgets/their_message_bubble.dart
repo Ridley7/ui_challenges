@@ -1,9 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/domain/entities/message.dart';
 import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/services/service_load_gif.dart';
 
 class TheirMessageBubble extends StatelessWidget{
-  const TheirMessageBubble({super.key});
+  const TheirMessageBubble({super.key, required this.message});
+
+  final Message message;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +21,11 @@ class TheirMessageBubble extends StatelessWidget{
               borderRadius: BorderRadius.circular(20),
               color: colors.primary
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Text(
-              'Labores duis dolore',
-              style: TextStyle(color: Colors.white),
+              message.text,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
@@ -31,7 +34,7 @@ class TheirMessageBubble extends StatelessWidget{
           height: 10,
         ),
 
-        ImageBubble(),
+        ImageBubble(urlImage: message.imageUrl!),
 
         const SizedBox(
           height: 10,
@@ -43,12 +46,14 @@ class TheirMessageBubble extends StatelessWidget{
 }
 
 class ImageBubble extends StatelessWidget{
-  const ImageBubble({super.key});
+  const ImageBubble({super.key, required this.urlImage});
+
+  final String urlImage;
 
   @override
   Widget build(BuildContext context) {
-    return const ServiceLoadGif(
-        url: "https://yesno.wtf/assets/no/20-56c4b19517aa69c8f7081939198341a4.gif"
+    return ServiceLoadGif(
+        url: urlImage
     );
 
 

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/presentation/small_apps/clone_whats_app/domain/entities/message.dart';
 
 class MyMessageBubble extends StatelessWidget{
-  const MyMessageBubble({super.key});
+  const MyMessageBubble({super.key, required this.message});
+
+  final Message message;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +19,11 @@ class MyMessageBubble extends StatelessWidget{
               borderRadius: BorderRadius.circular(20),
               color: colors.primary
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             child: Text(
-              'Labores duis dolore',
-              style: TextStyle(color: Colors.white),
+              message.text,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
         ),
