@@ -22,7 +22,10 @@ class AppTheme{
   ThemeData theme(){
     return ThemeData(
       useMaterial3: true,
-      colorSchemeSeed: _colorThemes[selectedColor]
+      colorSchemeSeed: _colorThemes[selectedColor],
+      appBarTheme: const AppBarTheme(
+        centerTitle: false
+      )
     );
   }
 

@@ -10,17 +10,34 @@ class Home extends StatelessWidget {
       body: ListView(
         children: [
           ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/cars");
+            },
+            child: const Text("Cards"),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/botones");
+            },
+            child: const Text("Botones"),
+          ),
+
+          ElevatedButton(
               onPressed: (){
                 Navigator.pushNamed(context, "/animations");
               },
-              child: Text("Animaciones")
+              child: const Text("Animaciones")
           ),
+
           ElevatedButton(
               onPressed: (){
                 Navigator.pushNamed(context, "/small_apps");
               },
-              child: Text("Small Apps")
+              child: const Text("Small Apps")
           ),
+
+
         ],
       ),
     );
