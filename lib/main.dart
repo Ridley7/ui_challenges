@@ -31,12 +31,24 @@ class MyApp extends StatelessWidget {
             '/animations/animated_list_one' : (context) => AnimatedListOne(),
             '/animations/animated_bottom_navigation_bar' : (context) => const AnimatedBottomNavigationBar(),
             '/animations/animated_appbar' : (context) => const AnimatedAppbar(),
+            '/animations/animate_do' : (context) => const AnimateDo(),
             '/small_apps' : (context) => const SmallApps(),
             '/small_apps/clone_whatsapp' : (context) => const CloneWhatsApp(),
             '/botones' : (context) => const Botones(),
             '/cards' : (context) => const Cards(),
+            '/tutorial' : (context) => const Tutorial(),
+
+            '/infinite_scroll' : (context) => const InfiniteScroll(),
+            '/progress' : (context) => const Progress(),
+            '/snackbar' : (context) => const Snackbars(),
+            '/ui_controlls': (context) => const UIControlls()
           },
       ),
     );
   }
 }
+
+//infinite_scroll
+//progress_screen
+//snackbar_screen
+//ui_controls

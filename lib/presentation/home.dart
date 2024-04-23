@@ -11,7 +11,42 @@ class Home extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: (){
-              Navigator.pushNamed(context, "/cars");
+              Navigator.pushNamed(context, "/ui_controlls");
+            },
+            child: const Text("UI Controls"),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/snackbar");
+            },
+            child: const Text("Snackbar"),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/progress");
+            },
+            child: const Text("Progress"),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/infinite_scroll");
+            },
+            child: const Text("Infinite Scroll"),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/tutorial");
+            },
+            child: const Text("Tutorial"),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, "/cards");
             },
             child: const Text("Cards"),
           ),
