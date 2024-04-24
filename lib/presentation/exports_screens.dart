@@ -3,7 +3,7 @@
 
 export 'package:flutter_ui_challenges/presentation/infinite_scroll/infinite_scroll.dart';
 export 'package:flutter_ui_challenges/presentation/progress/progress.dart';
-export 'package:flutter_ui_challenges/presentation/snackbars/snackbards.dart';
+export 'package:flutter_ui_challenges/presentation/snackbars/snackbars.dart';
 export 'package:flutter_ui_challenges/presentation/ui_controlls/ui_controlls.dart';
 
 export 'package:flutter_ui_challenges/presentation/tutorial/tutorial.dart';
